@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="speciality" type="petrov.ivan.gb65apps.data.Speciality"/>
+        <variable name="clickListener" type="petrov.ivan.gb65apps.ui.adapters.SpecialityAdapter.SpecialityClickListener"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+        <include android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 layout="@layout/speciality_layout"
+                 app:speciality="@{speciality}"/>
+    </LinearLayout>
+</layout>

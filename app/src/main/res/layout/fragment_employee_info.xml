@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="petrov.ivan.gb65apps.ui.employeeInfo.FragmentEmployeeInfo">
+    <data>
+        <variable
+                name="viewModel"
+                type="petrov.ivan.gb65apps.ui.employeeInfo.EmployeeInfoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:id="@+id/constraintLayout">
+
+        <ImageView android:id="@+id/ivPerson"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:srcCompat="@tools:sample/avatars[0]"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="16dp"
+            app:imageEmployee="@{viewModel.employee.avatrUrl}"
+            android:scaleType="fitStart"
+            app:layout_constraintDimensionRatio="h,2:1"/>
+
+        <include
+            layout="@layout/employee_full_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:employee="@{viewModel.employee}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPerson"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

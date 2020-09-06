@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Сотрудники</string>
+    <string name="frm_list_speciality">Специальности</string>
+    <string name="frm_list_employee">Сотрудники</string>
+    <string name="frm_employee">Сотрудник</string>
+
+    <string name="error_load_data">Ошибка загрузки данных</string>
+    <string name="speciality_title_pref">Специальность: %s</string>
+    <string name="name_preffix">%s %s</string>
+    <string name="age_preffix">Возраст %s</string>
+    <string name="birthday_preffix">Дата рождения %s</string>
+    <string name="speciality_one_preffix">Специальность:\u0020</string>
+    <string name="speciality_many_preffix">Специальности:\u0020</string>
+</resources>

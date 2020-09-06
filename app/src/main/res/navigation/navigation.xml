@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/navigation" app:startDestination="@id/fragmentListSpeciality">
+
+    <fragment
+        android:id="@+id/fragmentListSpeciality"
+        android:name="petrov.ivan.gb65apps.ui.listSpeciality.FragmentListSpeciality"
+        android:label="@string/frm_list_speciality">
+        <action
+            android:id="@+id/action_fragmentListSpeciality_to_fragmentListEmplooyes"
+            app:destination="@id/fragmentListEmployee"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentListEmployee"
+        android:name="petrov.ivan.gb65apps.ui.listEmployee.FragmentListEmployee"
+        android:label="@string/frm_list_employee">
+        <argument
+            android:name="speciality"
+            app:argType="petrov.ivan.gb65apps.data.Speciality" />
+        <action
+            android:id="@+id/action_fragmentListEmployee_to_fragmentEmployeeInfo"
+            app:destination="@id/fragmentEmployeeInfo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentEmployeeInfo"
+        android:name="petrov.ivan.gb65apps.ui.employeeInfo.FragmentEmployeeInfo"
+        android:label="@string/frm_employee">
+        <argument
+            android:name="employee"
+            app:argType="petrov.ivan.gb65apps.data.Employee" />
+    </fragment>
+</navigation>

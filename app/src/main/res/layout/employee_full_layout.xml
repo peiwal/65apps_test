@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="java.lang.String" />
+        <variable name="employee" type="petrov.ivan.gb65apps.data.Employee"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:id="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPerson"
+            android:text="@{@string/name_preffix(employee.FName, employee.LName)}"
+            tools:text="Менеджер" />
+
+        <TextView
+            android:id="@+id/tvBirthday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{@string/birthday_preffix(employee.birthday)}"
+            tools:text="Дата рождения: 12.07.1985" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvBirthday"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{@string/age_preffix(employee.age)}"
+            tools:text="Возраст: 34" />
+
+        <TextView
+            android:id="@+id/tvSpeciality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:textSpeciality="@{employee.speciality}"
+            tools:text="Специальность: Менеджер" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
